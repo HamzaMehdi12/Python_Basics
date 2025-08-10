@@ -23,7 +23,7 @@ Sequential(
 )
 
 ============================================================
-Layer (type)              Output Shape         Param #
+Layer (type)              Output Shape         Params
 ============================================================
 Dense (0)                (64, 'batch_size')  384
 Dropout (1)              (64, 'batch_size')  0
