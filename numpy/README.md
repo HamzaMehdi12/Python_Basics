@@ -47,6 +47,11 @@ The Sequential, Dense and Dropout layers, including the activation functions in 
 To evaluate our model, a loss function was also created, from the Binary Cross_Entropy. 
 ***Loss in the function is: 0.46051701859880917***
 ### Function timeline
-The complete file took 14.53 seconds to completely run a batch of ***1500***, with each row of 5 features and to produce an accuracy of 
+The complete file took 14.53 seconds to completely run a batch of ***1500***, with each row of 5 features and to produce an accuracy of ***98.0%*** and a Precision of ***98.0%***
+
+The accuracy is calculated based on the following formula
+### Accuracy = True / Total
+Similarly, Precision is calculated as follows: 
+### Precision = True Positive / All Positive
 
 
