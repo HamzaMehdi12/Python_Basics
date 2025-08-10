@@ -9,9 +9,9 @@ We implement Matrix Multiplication, Matrix Vectorization and Matrix Broadcasting
 Using this approach, we were able to design the following Architecture
 Network Architecture
 Sequential(
-  | (0): Dense(5 -> 64, activation=relu)|
+  |(0): Dense(5 -> 64, activation=relu)|
   |(1): Dropout(p = 0.2)|
-  (2): Dense(64 -> 128, activation=relu)
+  |(2): Dense(64 -> 128, activation=relu)|
   (3): Dropout(p = 0.4)
   (4): Dense(128 -> 64, activation=relu)
   (5): Dropout(p = 0.4)
