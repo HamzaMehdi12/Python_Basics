@@ -6,7 +6,7 @@ We design a state of the art forward-pass, mimicing the functionality of a neura
 We implement Matrix Multiplication, Matrix Vectorization and Matrix Broadcasting, while keeping only the Numpy library as the source of our model. Firstly the complete array of 1000+ batches was normalized using a novel normalization function. After nromaliozation, the model was sent to the architecture.
 
 ### Model Architecture.
-Using this approach, we were able to design the following Architecture
+Using this approach, we were able to design the following Architecture. The model depicts a linear regression Neural Network for out problem and generally performs great.
 Network Architecture
 Sequential(
   (0): Dense(5 -> 64, activation=relu)
