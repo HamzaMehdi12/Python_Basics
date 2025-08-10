@@ -3,15 +3,15 @@ Here we implement the basics of Numpy in Machine Learning, Deep Learning and AI.
 ## Forward-Pass using Numpy
 We design a state of the art forward-pass, mimicing the functionality of a neural network, implemented using numpy library only...
 
-We implement Matrix Multiplication, Matrix Vectorization and Matrix Broadcasting, while keeping only the Numpy library as the source of our model.
+We implement Matrix Multiplication, Matrix Vectorization and Matrix Broadcasting, while keeping only the Numpy library as the source of our model. Firstly the complete array of 1000+ batches was normalized using a novel normalization function. After nromaliozation, the model was sent to the architecture.
 
 ### Model Architecture.
 Using this approach, we were able to design the following Architecture
 Network Architecture
 Sequential(
-  |(0): Dense(5 -> 64, activation=relu)|
-  |(1): Dropout(p = 0.2)|
-  |(2): Dense(64 -> 128, activation=relu)|
+  (0): Dense(5 -> 64, activation=relu)
+  (1): Dropout(p = 0.2)
+  (2): Dense(64 -> 128, activation=relu)
   (3): Dropout(p = 0.4)
   (4): Dense(128 -> 64, activation=relu)
   (5): Dropout(p = 0.4)
@@ -41,5 +41,12 @@ Dense (10)               (2, 'batch_size')   34
 ----------------------------------------------------------
 Total params: 19602
 
+The Sequential, Dense and Dropout layers, including the activation functions in Dense were coded using Numpy.
+
+### Loss Function
+To evaluate our model, a loss function was also created, from the Binary Cross_Entropy. 
+***Loss in the function is: 0.46051701859880917***
+### Function timeline
+The complete file took 14.53 seconds to completely run a batch of ***1500***, with each row of 5 features and to produce an accuracy of 
 
 
