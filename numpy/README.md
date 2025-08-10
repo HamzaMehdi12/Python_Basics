@@ -54,4 +54,10 @@ The accuracy is calculated based on the following formula
 Similarly, Precision is calculated as follows: 
 ### Precision = True Positive / All Positive
 
+### Images
+Below are the
+<img width="1920" height="967" alt="Model_Params" src="https://github.com/user-attachments/assets/a8481a5e-9837-4fa0-972e-27f03c00ec58" />
+
+<img width="1920" height="967" alt="Accuracy_and_Precision" src="https://github.com/user-attachments/assets/290ebdb2-3dbf-4006-895d-0fbd0ebff698" />
+
 
