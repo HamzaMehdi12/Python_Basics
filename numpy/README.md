@@ -23,10 +23,11 @@ Sequential(
 )
 
 ------------------------------------------------------------
-Layer (type)              Output Shape         Params
+|Layer (type)| Output Shape| |Params|
+| - | - | - |
 
 ------------------------------------------------------------
-Dense (0)                (64, 'batch_size')  384
+|Dense (0)|                (64, 'batch_size')|  384|
 Dropout (1)              (64, 'batch_size')  0
 Dense (2)                (128, 'batch_size') 8320
 Dropout (3)              (128, 'batch_size') 0
