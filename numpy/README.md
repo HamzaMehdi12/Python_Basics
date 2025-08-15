@@ -22,22 +22,22 @@ Sequential(
   (10): Dense(16 -> 2, activation=sigmoid)
 )
 
-|Layer (type)|           |Output Shape|     |Params|
-|:-----------------------|:----------------:|------:|
-|Dense (0)               |(64, 'batch_size')|  384  |
-|Dropout (1)              (64, 'batch_size')  0
-Dense (2)                (128, 'batch_size') 8320
-Dropout (3)              (128, 'batch_size') 0
-Dense (4)                (64, 'batch_size')  8256
-Dropout (5)              (64, 'batch_size')  0
-Dense (6)                (32, 'batch_size')  2080
-Dropout (7)              (32, 'batch_size')  0
-Dense (8)                (16, 'batch_size')  528
-Dropout (9)              (16, 'batch_size')  0
-Dense (10)               (2, 'batch_size')   34
+| Layer (type)  | Output Shape         | Params |
+|:--------------|:--------------------:|-------:|
+| Dense (0)     | (64, 'batch_size')    |   384  |
+| Dropout (1)   | (64, 'batch_size')    |     0  |
+| Dense (2)     | (128, 'batch_size')   |  8320  |
+| Dropout (3)   | (128, 'batch_size')   |     0  |
+| Dense (4)     | (64, 'batch_size')    |  8256  |
+| Dropout (5)   | (64, 'batch_size')    |     0  |
+| Dense (6)     | (32, 'batch_size')    |  2080  |
+| Dropout (7)   | (32, 'batch_size')    |     0  |
+| Dense (8)     | (16, 'batch_size')    |   528  |
+| Dropout (9)   | (16, 'batch_size')    |     0  |
+| Dense (10)    | (2, 'batch_size')     |    34  |
 
-----------------------------------------------------------
-Total params: 19602
+**Total params:** 19,602
+
 
 The Sequential, Dense and Dropout layers, including the activation functions in Dense were coded using Numpy.
 
