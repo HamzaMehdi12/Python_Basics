@@ -39,18 +39,21 @@ Sequential(
 
 **Total params:** 19,602
 
-The Sequential, Dense and Dropout layers, including the activation functions in Dense were coded using Numpy.
+### Descriptive Numpy FeedForward Functions and Performance Results
 
-### Loss Function
-To evaluate our model, a loss function was also created, from the Binary Cross_Entropy. 
-***Loss in the function is: 0.46051701859880917***
-### Function timeline
-The complete file took 14.53 seconds to completely run a batch of ***1500***, with each row of 5 features and to produce an accuracy of ***98.0%*** and a Precision of ***98.0%***
+| Component / Metric         | Description                                                       | Equation (LaTeX)                                                | Value / Example Output                  |
+|----------------------------|-------------------------------------------------------------------|------------------------------------------------------------------|-------------------------------------------|
+| **Sequential Layer**       | Linear stack of layers built using NumPy                          | -                                                                | Implemented in NumPy                      |
+| **Dense Layer**             | Fully connected layer where each neuron receives input from all neurons in previous layer | $y = f(Wx + b)$                                                  | Implemented in NumPy                      |
+| **Dropout Layer**           | Randomly sets a fraction of inputs to 0 during training to prevent overfitting | -                                                                | Applied dropout for regularization        |
+| **Activation (Sigmoid)**    | Maps input to range (0,1) for binary classification               | $\sigma(x) = \frac{1}{1 + e^{-x}}$                              | Used in output layer                      |
+| **Activation (ReLU)**       | Rectified Linear Unit; sets negative values to zero               | $\text{ReLU}(x) = \max(0, x)$                                   | Used in hidden layers                     |
+| **Binary Cross-Entropy Loss** | Measures error for binary classification tasks                   | $L = -\frac{1}{N} \sum_{i=1}^N \big[y_i \log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)\big]$ | **0.4605**                                |
+| **Accuracy**                | Proportion of correct predictions                                 | $\text{Accuracy} = \frac{\text{True}}{\text{Total}}$             | **98.0%**                                 |
+| **Precision**               | Proportion of positive predictions that are correct               | $\text{Precision} = \frac{\text{True Positive}}{\text{All Positive}}$ | **98.0%**                                 |
+| **Batch Size**              | Number of samples processed in one pass                           | -                                                                | **1500** samples (5 features each)        |
+| **Execution Time**          | Time taken to run one batch                                       | -                                                                | **14.53 seconds**                          |
 
-The accuracy is calculated based on the following formula
-### Accuracy = True / Total
-Similarly, Precision is calculated as follows: 
-### Precision = True Positive / All Positive
 
 ### Images
 Below are the
