@@ -94,26 +94,22 @@ After a set of Arrays are passed, our functions and class modules calculated the
  [38 20 42 22 46 24 50 26 54 28 58 30 62 32 66 34 70 36 74 38]]
 
 #### Descriptive Statistic Functions
-## 📊 Descriptive Statistics Functions
+| Method Name                 | Description                                     | Equation | Input                     | Output                   | Example Value |
+|------------------------------|-----------------------------------------------|----------|---------------------------|--------------------------|---------------|
+| `correlation`               | Compute correlation between datasets          | $r = \frac{\sum{(x_i-\mu_x)(y_i-\mu_y)}}{\sqrt{\sum{(x_i-\mu_x)^2} \sum{(y_i-\mu_y)^2}}}$ | 2 arrays/lists           | Correlation coefficient  | **0.85** |
+| `covariance`                | Compute covariance                            | $\text{cov}(X,Y) = \frac{\sum{(x_i-\mu_x)(y_i-\mu_y)}}{n}$ | 2 arrays/lists           | Covariance value         | **12.5** |
+| `mean_numpy`                | Calculate mean using NumPy                     | $\mu = \frac{\sum x_i}{n}$ | 1 array/list             | Mean value               | **10.2** |
+| `median_numpy`              | Calculate median using NumPy                   | - | 1 array/list             | Median value             | **10.0** |
+| `min_max_and_range_numpy`   | Find min, max, and range using NumPy           | $\text{range} = \text{max} - \text{min}$ | 1 array/list             | Tuple `(min, max, range)`| **(2, 18, 16)** |
+| `min_max_scaling`           | Perform min-max normalization                  | $x' = \frac{x - \text{min}}{\text{max} - \text{min}}$ | 1 array/list             | Scaled array             | **[0.0, 0.75, 1.0]** |
+| `mode_numpy`                | Compute mode using NumPy                       | - | 1 array/list             | Mode value               | **8** |
+| `percentile`                | Calculate percentile values                    | - | 1 array/list + percentile| Percentile value         | **75th percentile = 12** |
+| `quartile`                  | Compute quartiles (Q1, Q2, Q3)                | - | 1 array/list             | Tuple `(Q1, Q2, Q3)`    | **(6, 10, 14)** |
+| `skewness_and_kurtosis`     | Compute skewness and kurtosis                  | $\text{skew} = \frac{\sum{(x_i-\mu)^3}/n}{\sigma^3}, \quad \text{kurt} = \frac{\sum{(x_i-\mu)^4}/n}{\sigma^4}$ | 1 array/list             | Tuple `(skewness, kurtosis)`| **(0.2, 2.8)** |
+| `standard_dev`              | Calculate standard deviation                   | $\sigma = \sqrt{\frac{\sum{(x_i-\mu)^2}}{n}}$ | 1 array/list             | Standard deviation       | **3.2** |
+| `variance`                  | Calculate variance                             | $\sigma^2 = \frac{\sum{(x_i-\mu)^2}}{n}$ | 1 array/list             | Variance value           | **10.24** |
+| `z_score_normalization`     | Perform z-score normalization                  | $z = \frac{x-\mu}{\sigma}$ | 1 array/list             | Normalized array         | **[-1.25, 0.0, 1.25]** |
 
-| Function Name              | Description                                               | Equation (LaTeX)                                                |
-|----------------------------|-----------------------------------------------------------|------------------------------------------------------------------|
-| `mean`                     | Average of all values                                     | $\displaystyle \bar{x} = \frac{\sum_{i=1}^n x_i}{n}$            |
-| `median`                   | Middle value when dataset is sorted                       | -                                                                |
-| `mode`                     | Most frequent value(s)                                    | -                                                                |
-| `minimum`                  | Smallest value in dataset                                 | $\displaystyle \min(x)$                                         |
-| `maximum`                  | Largest value in dataset                                  | $\displaystyle \max(x)$                                         |
-| `range`                    | Difference between max and min                            | $\displaystyle R = \max(x) - \min(x)$                           |
-| `variance`                 | Spread of data around mean                                | $\displaystyle \sigma^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n}$ |
-| `standard_deviation`       | Square root of variance                                   | $\displaystyle \sigma = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n}}$ |
-| `covariance`               | Joint variability of two variables                        | $\displaystyle \text{Cov}(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n}$ |
-| `correlation`              | Strength of linear relationship between two variables     | $\displaystyle r = \frac{\text{Cov}(X,Y)}{\sigma_X \sigma_Y}$   |
-| `z_score_normalization`    | Normalize to mean 0 and std. deviation 1                   | $\displaystyle z_i = \frac{x_i - \bar{x}}{\sigma}$              |
-| `min_max_scaling`          | Scale between 0 and 1                                     | $\displaystyle x' = \frac{x - \min(x)}{\max(x) - \min(x)}$      |
-| `percentile`               | Value below which a given percentage falls                | $P_k = \frac{k(n+1)}{100}$ (position formula)                   |
-| `quartile`                 | 25%, 50%, and 75% cut points                              | $Q_1, Q_2, Q_3$ from sorted data                                |
-| `skewness`                 | Asymmetry of distribution                                 | $\displaystyle \frac{\sum_{i=1}^n (x_i - \bar{x})^3}{n\sigma^3}$ |
-| `kurtosis`                 | Peakedness of distribution                                | $\displaystyle \frac{\sum_{i=1}^n (x_i - \bar{x})^4}{n\sigma^4}$ |
 
 
 
