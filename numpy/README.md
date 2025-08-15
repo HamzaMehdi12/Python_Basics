@@ -58,4 +58,26 @@ Below are the
 
 <img width="1920" height="967" alt="Accuracy_and_Precision" src="https://github.com/user-attachments/assets/290ebdb2-3dbf-4006-895d-0fbd0ebff698" />
 
+## Statistical Analysis Engine
+Furthermore, we created a statistical Engine that runs all numpy based functions with greater accuracy and neat strcuture and can be used for a variety of tasks.
+
+Here, we implemented, the following table
+
+### Statistics Class Methods
+
+| Method Name                 | Description                                     | Input                     | Output                   |
+|------------------------------|-----------------------------------------------|---------------------------|--------------------------|
+| `correlation`               | Compute correlation between datasets          | 2 arrays/lists           | Correlation coefficient  |
+| `covariance`                | Compute covariance                            | 2 arrays/lists           | Covariance value         |
+| `mean_numpy`                | Calculate mean using NumPy                     | 1 array/list             | Mean value               |
+| `median_numpy`              | Calculate median using NumPy                   | 1 array/list             | Median value             |
+| `min_max_and_range_numpy`   | Find min, max, and range using NumPy           | 1 array/list             | Tuple `(min, max, range)`|
+| `min_max_scaling`           | Perform min-max normalization                  | 1 array/list             | Scaled array             |
+| `mode_numpy`                | Compute mode using NumPy                       | 1 array/list             | Mode value               |
+| `percentile`                | Calculate percentile values                    | 1 array/list + percentile| Percentile value         |
+| `quartile`                  | Compute quartiles (Q1, Q2, Q3)                | 1 array/list             | Tuple `(Q1, Q2, Q3)`    |
+| `skewness_and_kurtosis`     | Compute skewness and kurtosis                  | 1 array/list             | Tuple `(skewness, kurtosis)`|
+| `standard_dev`              | Calculate standard deviation                   | 1 array/list             | Standard deviation       |
+| `variance`                  | Calculate variance                             | 1 array/list             | Variance value           |
+| `z_score_normalization`     | Perform z-score normalization                  | 1 array/list             | Normalized array         |
 
