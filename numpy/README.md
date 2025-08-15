@@ -81,3 +81,36 @@ Here, we implemented, the following table
 | `variance`                  | Calculate variance                             | 1 array/list             | Variance value           |
 | `z_score_normalization`     | Perform z-score normalization                  | 1 array/list             | Normalized array         |
 
+### Results
+After a set of Arrays are passed, our functions and class modules calculated the following results:
+#### Dataset Overview
+[[ 0  1  4  3  8  5 12  7 16  9 20 11 24 13 28 15 32 17 36 19]
+ [ 2  2  6  4 10  6 14  8 18 10 22 12 26 14 30 16 34 18 38 20]
+ [ 4  3  8  5 12  7 16  9 20 11 24 13 28 15 32 17 36 19 40 21]
+ ...
+ [38 20 42 22 46 24 50 26 54 28 58 30 62 32 66 34 70 36 74 38]]
+
+#### Descriptive Statistic Functions
+## 📊 Descriptive Statistics Functions
+
+| Function Name              | Description                                               | Equation (LaTeX)                                                |
+|----------------------------|-----------------------------------------------------------|------------------------------------------------------------------|
+| `mean`                     | Average of all values                                     | $\displaystyle \bar{x} = \frac{\sum_{i=1}^n x_i}{n}$            |
+| `median`                   | Middle value when dataset is sorted                       | -                                                                |
+| `mode`                     | Most frequent value(s)                                    | -                                                                |
+| `minimum`                  | Smallest value in dataset                                 | $\displaystyle \min(x)$                                         |
+| `maximum`                  | Largest value in dataset                                  | $\displaystyle \max(x)$                                         |
+| `range`                    | Difference between max and min                            | $\displaystyle R = \max(x) - \min(x)$                           |
+| `variance`                 | Spread of data around mean                                | $\displaystyle \sigma^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n}$ |
+| `standard_deviation`       | Square root of variance                                   | $\displaystyle \sigma = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n}}$ |
+| `covariance`               | Joint variability of two variables                        | $\displaystyle \text{Cov}(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n}$ |
+| `correlation`              | Strength of linear relationship between two variables     | $\displaystyle r = \frac{\text{Cov}(X,Y)}{\sigma_X \sigma_Y}$   |
+| `z_score_normalization`    | Normalize to mean 0 and std. deviation 1                   | $\displaystyle z_i = \frac{x_i - \bar{x}}{\sigma}$              |
+| `min_max_scaling`          | Scale between 0 and 1                                     | $\displaystyle x' = \frac{x - \min(x)}{\max(x) - \min(x)}$      |
+| `percentile`               | Value below which a given percentage falls                | $P_k = \frac{k(n+1)}{100}$ (position formula)                   |
+| `quartile`                 | 25%, 50%, and 75% cut points                              | $Q_1, Q_2, Q_3$ from sorted data                                |
+| `skewness`                 | Asymmetry of distribution                                 | $\displaystyle \frac{\sum_{i=1}^n (x_i - \bar{x})^3}{n\sigma^3}$ |
+| `kurtosis`                 | Peakedness of distribution                                | $\displaystyle \frac{\sum_{i=1}^n (x_i - \bar{x})^4}{n\sigma^4}$ |
+
+
+
