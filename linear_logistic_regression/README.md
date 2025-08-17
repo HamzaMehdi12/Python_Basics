@@ -43,22 +43,16 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 - **Hypothesis (Prediction Function):**
 
-  $$
-  \hat{y} = Xw + b
-  $$
+  $$\hat{y} = Xw + b$$
 
 - **Cost Function (Mean Squared Error):**
 
-  $$
-  J(w, b) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-  $$
+  $$J(w, b) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 
 - **Gradient Updates:**
 
-  $$
-  w := w - \eta \cdot \frac{1}{n} X^T (Xw - y), \quad 
-  b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (Xw - y)
-  $$
+  $$w := w - \eta \cdot \frac{1}{n} X^T (Xw - y), \quad 
+  b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (Xw - y)$$
 
 ---
 
