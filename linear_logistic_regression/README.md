@@ -43,9 +43,9 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 - **Hypothesis (Prediction Function):**
 
-  $$
+  \[
   \hat{y} = Xw + b
-  $$
+  \]
 
 - **Cost Function (Mean Squared Error):**
 
