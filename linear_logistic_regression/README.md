@@ -30,33 +30,118 @@ Both models are trained, evaluated, and visualized with **animated plots, metric
 
 ---
 
-## Method Inventory
+---
 
-### `LinearRegressionGD` Class
+## Method Inventory & Technical Showcase
 
-| Method | Signature | Purpose | Returns | Complexity |
-|--------|-----------|---------|---------|------------|
-| `__init__` | `(lr: float = 0.01, n_iters: int = 1000)` | Initialize learning rate & iterations | None | O(1) |
-| `fit` | `(X: np.ndarray, y: np.ndarray)` | Train model using gradient descent | None | O(n * d * iters) |
-| `predict` | `(X: np.ndarray) -> np.ndarray` | Predict values for input features | Predicted vector | O(n * d) |
-| `mse` | `(y_true, y_pred) -> float` | Compute Mean Squared Error | Float | O(n) |
-| `mae` | `(y_true, y_pred) -> float` | Compute Mean Absolute Error | Float | O(n) |
-| `rmse` | `(y_true, y_pred) -> float` | Root Mean Squared Error | Float | O(n) |
-| `r2_score` | `(y_true, y_pred) -> float` | Compute R² score | Float | O(n) |
+Below is a comprehensive breakdown of the implemented classes, methods, and their mathematical underpinnings.
 
 ---
 
-### 🔹 `LogisticRegressionGD` Class
+### 🔹 Linear Regression (Gradient Descent)
 
-| Method | Signature | Purpose | Returns | Complexity |
-|--------|-----------|---------|---------|------------|
-| `__init__` | `(lr: float = 0.01, n_iters: int = 1000)` | Initialize logistic regression | None | O(1) |
-| `fit` | `(X: np.ndarray, y: np.ndarray)` | Train model with gradient descent | None | O(n * d * iters) |
-| `predict_proba` | `(X: np.ndarray) -> np.ndarray` | Predict probability scores using sigmoid | Probabilities | O(n * d) |
-| `predict` | `(X: np.ndarray) -> np.ndarray` | Classify into 0/1 | Labels | O(n * d) |
-| `accuracy` | `(y_true, y_pred) -> float` | Compute accuracy score | Float | O(n) |
-| `precision` | `(y_true, y_pred) -> float` | Compute precision | Float | O(n) |
-| `_sigmoid` | `(z: np.ndarray) -> np.ndarray` | Apply sigmoid function | Vector | O(n) |
+#### **Mathematical Formulation**
+
+- **Hypothesis (Prediction Function):**
+  
+  \[
+  \hat{y} = Xw + b
+  \]
+
+- **Cost Function (Mean Squared Error):**
+  
+  \[
+  J(w, b) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+  \]
+
+- **Gradient Updates:**
+  
+  \[
+  w := w - \eta \cdot \frac{1}{n} X^T (Xw - y), \quad 
+  b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (Xw - y)
+  \]
 
 ---
 
+#### **Method Inventory – LinearRegressionGD**
+
+| Method | Signature | Description | Returns | Notes |
+|--------|-----------|-------------|---------|-------|
+| `__init__` | `(lr: float = 0.01, n_iters: int = 1000)` | Initialize learning rate and iterations | None | Hyperparameters only |
+| `fit` | `(X: np.ndarray, y: np.ndarray)` | Perform gradient descent updates on weights and bias | None | Core training loop |
+| `predict` | `(X: np.ndarray) -> np.ndarray` | Predict regression outputs | `np.ndarray` | Uses learned weights |
+| `mse` | `(y_true, y_pred) -> float` | Mean Squared Error | `float` | Cost function |
+| `mae` | `(y_true, y_pred) -> float` | Mean Absolute Error | `float` | Robust to outliers |
+| `rmse` | `(y_true, y_pred) -> float` | Root Mean Squared Error | `float` | Penalizes large errors |
+| `r2_score` | `(y_true, y_pred) -> float` | Coefficient of Determination (R²) | `float` | Goodness of fit |
+
+---
+
+#### **Training Results – Linear Regression**
+
+| Metric | Training | Testing |
+|--------|----------|---------|
+| **Loss (MSE)** | 8.716 | 6.614 |
+| **RMSE** | 2.95 | 2.57 |
+| **MAE** | 2.70 | 2.35 |
+| **R² Score** | 0.89 | 0.91 |
+
+---
+
+### Logistic Regression (Gradient Descent)
+
+#### **Mathematical Formulation**
+
+- **Hypothesis (Sigmoid Function):**
+  
+  \[
+  \hat{y} = \sigma(z) = \frac{1}{1 + e^{-z}}, \quad z = Xw + b
+  \]
+
+- **Cost Function (Binary Cross-Entropy):**
+  
+  \[
+  J(w, b) = -\frac{1}{n} \sum_{i=1}^{n} \Big[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \Big]
+  \]
+
+- **Gradient Updates:**
+  
+  \[
+  w := w - \eta \cdot \frac{1}{n} X^T (\hat{y} - y), \quad 
+  b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (\hat{y} - y)
+  \]
+
+---
+
+#### **Method Inventory – LogisticRegressionGD**
+
+| Method | Signature | Description | Returns | Notes |
+|--------|-----------|-------------|---------|-------|
+| `__init__` | `(lr: float = 0.01, n_iters: int = 1000)` | Initialize logistic regression | None | Hyperparameters only |
+| `fit` | `(X: np.ndarray, y: np.ndarray)` | Perform gradient descent with BCE loss | None | Core training loop |
+| `predict_proba` | `(X: np.ndarray) -> np.ndarray` | Predict probabilities (sigmoid outputs) | `np.ndarray` | Returns [0,1] values |
+| `predict` | `(X: np.ndarray) -> np.ndarray` | Convert probabilities to 0/1 labels | `np.ndarray` | Threshold = 0.5 |
+| `accuracy` | `(y_true, y_pred) -> float` | Accuracy score | `float` | % of correct predictions |
+| `precision` | `(y_true, y_pred) -> float` | Precision score | `float` | Handles imbalanced data |
+| `_sigmoid` | `(z: np.ndarray) -> np.ndarray` | Apply sigmoid function | `np.ndarray` | Internal helper |
+
+---
+
+#### **Training Results – Logistic Regression**
+
+| Metric | Value |
+|--------|-------|
+| **Training Loss (BCE)** | 0.056 |
+| **Accuracy** | **99.0%** |
+| **Precision** | **98.3%** |
+
+---
+
+## 📊 Summary Comparison
+
+| Model | Loss Function | Final Loss | Accuracy | R² Score | Notes |
+|-------|--------------|------------|----------|-----------|-------|
+| **Linear Regression** | MSE | 6.614 (test) | – | 0.91 (test) | Excellent regression fit |
+| **Logistic Regression** | BCE | 0.056 | 99% | – | Almost perfect classification |
+
+---
