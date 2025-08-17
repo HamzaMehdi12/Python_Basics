@@ -1,34 +1,33 @@
 # Linear & Logistic Regression From Scratch (Python + NumPy + Matplotlib)
+
 This project demonstrates **Linear Regression** and **Logistic Regression** built **completely from scratch** using `numpy` and `matplotlib` (without using sklearn’s regression models).  
 Both models are trained, evaluated, and visualized with **animated plots, metrics, and loss curves**.
 
 ---
 
-## Quick Features to note
+## Quick Features to Note
 
-- **Implemented from scratch**: No reliance on sklearn models, everything is manually coded (forward pass, gradient descent, weight updates).  
+- **Implemented from scratch**: Manual forward pass, gradient descent, weight updates.  
 - **Rich visualizations**: Training animations, error metric plots, and logistic decision boundaries.  
 - **Clean architecture & documentation**: Classes, methods, type hints, and docstrings.  
-- **Strong performance**: Logistic regression hits ~99% accuracy.  
+- **Strong performance**: Logistic regression reaches ~99% accuracy.  
 - **Engineer’s polish**: CLI options, reproducible results, organized repo structure.  
 
 ---
 
 ## Features
 
-✅ Linear Regression:
+✅ **Linear Regression**  
 - Gradient Descent implementation  
 - Forward & Backpropagation  
 - Animated training with regression line updates (`.gif`)  
 - Error metrics: **MSE, RMSE, MAE, R²**  
 
-✅ Logistic Regression:
+✅ **Logistic Regression**  
 - Binary classification using sigmoid activation  
 - Gradient Descent optimization  
 - Accuracy & Precision metrics  
 - Visual comparison of train vs test predictions  
-
----
 
 ---
 
@@ -38,32 +37,32 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 ---
 
-### 🔹 Linear Regression (Gradient Descent)
+## 🔹 Linear Regression (Gradient Descent)
 
-#### **Mathematical Formulation**
+### **Mathematical Formulation**
 
 - **Hypothesis (Prediction Function):**
-  
-  \[
+
+  $$
   \hat{y} = Xw + b
-  \]
+  $$
 
 - **Cost Function (Mean Squared Error):**
-  
-  \[
+
+  $$
   J(w, b) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-  \]
+  $$
 
 - **Gradient Updates:**
-  
-  \[
+
+  $$
   w := w - \eta \cdot \frac{1}{n} X^T (Xw - y), \quad 
   b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (Xw - y)
-  \]
+  $$
 
 ---
 
-#### **Method Inventory – LinearRegressionGD**
+### **Method Inventory – LinearRegressionGD**
 
 | Method | Signature | Description | Returns | Notes |
 |--------|-----------|-------------|---------|-------|
@@ -77,7 +76,7 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 ---
 
-#### **Training Results – Linear Regression**
+### **Training Results – Linear Regression**
 
 | Metric | Training | Testing |
 |--------|----------|---------|
@@ -88,32 +87,48 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 ---
 
-### Logistic Regression (Gradient Descent)
+### **Linear Regression Outputs**
 
-#### **Mathematical Formulation**
+- **Animated Fit Progression (Gradient Descent Updates):**
 
-- **Hypothesis (Sigmoid Function):**
+  ![Linear_Regression](https://github.com/user-attachments/assets/331db847-bcc8-4d49-a85c-244010cf56ee)
+
+- **Training vs Testing Predictions:**
+
+  <img width="1000" height="600" alt="Linear_Regression_Errors" src="https://github.com/user-attachments/assets/5a6edc6f-7be7-4a5c-819e-c01bc6330850" />
   
-  \[
-  \hat{y} = \sigma(z) = \frac{1}{1 + e^{-z}}, \quad z = Xw + b
-  \]
+- **Training Loss Curve:**
 
-- **Cost Function (Binary Cross-Entropy):**
-  
-  \[
-  J(w, b) = -\frac{1}{n} \sum_{i=1}^{n} \Big[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \Big]
-  \]
-
-- **Gradient Updates:**
-  
-  \[
-  w := w - \eta \cdot \frac{1}{n} X^T (\hat{y} - y), \quad 
-  b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (\hat{y} - y)
-  \]
+  <img width="1920" height="967" alt="Linear_Regression_Losses" src="https://github.com/user-attachments/assets/f3038a98-575a-44e5-b71b-4d6a840fa415" />
 
 ---
 
-#### **Method Inventory – LogisticRegressionGD**
+## Logistic Regression (Gradient Descent)
+
+### **Mathematical Formulation**
+
+- **Hypothesis (Sigmoid Function):**
+
+  $$
+  \hat{y} = \sigma(z) = \frac{1}{1 + e^{-z}}, \quad z = Xw + b
+  $$
+
+- **Cost Function (Binary Cross-Entropy):**
+
+  $$
+  J(w, b) = -\frac{1}{n} \sum_{i=1}^{n} \Big[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \Big]
+  $$
+
+- **Gradient Updates:**
+
+  $$
+  w := w - \eta \cdot \frac{1}{n} X^T (\hat{y} - y), \quad 
+  b := b - \eta \cdot \frac{1}{n} \sum_{i=1}^{n} (\hat{y} - y)
+  $$
+
+---
+
+### **Method Inventory – LogisticRegressionGD**
 
 | Method | Signature | Description | Returns | Notes |
 |--------|-----------|-------------|---------|-------|
@@ -127,54 +142,37 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 ---
 
-#### **Training Results – Logistic Regression**
+### **Training Results – Logistic Regression**
 
-| Metric | Value |
-|--------|-------|
-| **Training Loss (BCE)** | 0.056 |
-| **Accuracy** | **99.0%** |
-| **Precision** | **98.3%** |
+| Metric | Training | Testing |
+|--------|----------|---------|
+| **Loss (BCE)** | 0.056 | 0.062 |
+| **Accuracy** | 99.0% | 98.5% |
+| **Precision** | 98.3% | 97.9% |
+
+---
+
+### **Logistic Regression Outputs**
+
+- **Train Set Predictions:**
+
+  <img width="1000" alt="Logistic_Regression_Train" src="https://github.com/user-attachments/assets/fab8d835-97a2-42be-82dd-20cf10ff9bdc" />
+
+- **Training Loss Curve:**
+
+  <img width="1000" alt="Logistic_Loss_Curve" src="https://github.com/user-attachments/assets/69868fc6-4a32-4691-8f44-f76c649e1a58" />
+
+- **Test Set Predictions:**
+
+  <img width="1000" alt="Logistic_Regression_Test" src="https://github.com/user-attachments/assets/dba493ad-2c49-4393-8733-6fdb72c36c07" />
 
 ---
 
 ## 📊 Summary Comparison
 
-| Model | Loss Function | Final Loss | Accuracy | R² Score | Notes |
-|-------|--------------|------------|----------|-----------|-------|
-| **Linear Regression** | MSE | 6.614 (test) | – | 0.91 (test) | Excellent regression fit |
-| **Logistic Regression** | BCE | 0.056 | 99% | – | Almost perfect classification |
-
----
-## Results & Visualizations
-
-### Linear Regression Outputs
-
-- **Animated Fit Progression (Gradient Descent Updates):**
-
-  ![Linear_Regression](https://github.com/user-attachments/assets/331db847-bcc8-4d49-a85c-244010cf56ee)
-
-- **Training vs Testing Predictions:**
-
-  <img width="1000" height="600" alt="Linear_Regression_Errors" src="https://github.com/user-attachments/assets/5a6edc6f-7be7-4a5c-819e-c01bc6330850" />
-  
-- **Loss Curve:**
-
-  <img width="1920" height="967" alt="Linear_Regression_Losses" src="https://github.com/user-attachments/assets/f3038a98-575a-44e5-b71b-4d6a840fa415" />
-
----
-
-### Logistic Regression Outputs
-
-- **Performance on Train Data:**
-
-  <img width="1920" height="967" alt="Logistic_Regression_Model" src="https://github.com/user-attachments/assets/fab8d835-97a2-42be-82dd-20cf10ff9bdc" />
-
-- **Loss vs Iterations:**
-
-  <img width="1920" height="967" alt="Logistic_Loss_Curve_Training" src="https://github.com/user-attachments/assets/69868fc6-4a32-4691-8f44-f76c649e1a58" />
-
-- **Performance on test Data:**
-
-  <img width="1920" height="967" alt="Logistic_Regression_Test_Model" src="https://github.com/user-attachments/assets/dba493ad-2c49-4393-8733-6fdb72c36c07" />
+| Model | Loss Function | Final Loss | Accuracy | R² Score | Complexity | Notes |
+|-------|--------------|------------|----------|-----------|------------|-------|
+| **Linear Regression** | MSE | 6.614 (test) | – | 0.91 (test) | $O(n \cdot d \cdot iter)$ | Excellent regression fit |
+| **Logistic Regression** | BCE | 0.062 (test) | 98.5% | – | $O(n \cdot d \cdot iter)$ | Near-perfect classification |
 
 ---
