@@ -103,24 +103,18 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 
 - **Hypothesis (Sigmoid Function):**
 
-\[
-\hat{y} = \sigma(z) = \frac{1}{1 + e^{-z}}, \quad z = Xw + b
-\]
+$$\hat{y} = \sigma(z) = \frac{1}{1 + e^{-z}}, \quad z = Xw + b$$
 
 - **Cost Function (Binary Cross-Entropy):**
 
-\[
-J(w, b) = -\frac{1}{n} \sum_{i=1}^{n} \Big[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \Big]
-\]
+$$J(w, b) = -\frac{1}{n} \sum_{i=1}^{n} \Big[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \Big]$$
 
 - **Gradient Updates with Penalty Factor**  
 
 To improve convergence and overall performance, a **scalar penalty factor \(P\)** is applied to the derivative updates for both weights and bias:
 
-\[
-w := w - \eta \cdot P \cdot \frac{1}{n} X^T (\hat{y} - y), \quad 
-b := b - \eta \cdot P \cdot \frac{1}{n} \sum_{i=1}^{n} (\hat{y} - y)
-\]
+$$w := w - \eta \cdot P \cdot \frac{1}{n} X^T (\hat{y} - y), \quad 
+b := b - \eta \cdot P \cdot \frac{1}{n} \sum_{i=1}^{n} (\hat{y} - y)$$
 
 > **Innovation Highlight:** This penalty factor increased accuracy from **~70% → 99%**, demonstrating a significant improvement in training stability and classification performance.
 
@@ -219,24 +213,16 @@ This project illustrates the **end-to-end workflow of building learning algorith
 #### Regression Metrics
 
 - **Mean Squared Error (MSE):**
-  \[
-  \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-  \]
+  $$\text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
 
 - **Root Mean Squared Error (RMSE):**
-  \[
-  \text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2 }
-  \]
+  $$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2 }$$
 
 - **Mean Absolute Error (MAE):**
-  \[
-  \text{MAE} = \frac{1}{n} \sum_{i=1}^n \left| y_i - \hat{y}_i \right|
-  \]
+  $$\text{MAE} = \frac{1}{n} \sum_{i=1}^n \left| y_i - \hat{y}_i \right|$$
 
 - **Coefficient of Determination (R²):**
-  \[
-  R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}
-  \]
+  $$R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}$$
   where $\bar{y}$ is the mean of true labels.
 
 ---
@@ -244,14 +230,10 @@ This project illustrates the **end-to-end workflow of building learning algorith
 #### Classification Metrics
 
 - **Accuracy:**
-  \[
-  \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
-  \]
+  $$\text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}$$
 
 - **Precision:**
-  \[
-  \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
-  \]
+  $$\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}$$
 
 Where:  
 - **TP** = True Positives  
