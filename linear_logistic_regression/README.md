@@ -145,3 +145,36 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 | **Logistic Regression** | BCE | 0.056 | 99% | – | Almost perfect classification |
 
 ---
+## Results & Visualizations
+
+### Linear Regression Outputs
+
+- **Animated Fit Progression (Gradient Descent Updates):**
+
+  ![Linear_Regression](https://github.com/user-attachments/assets/331db847-bcc8-4d49-a85c-244010cf56ee)
+
+- **Training vs Testing Predictions:**
+
+  <img width="1000" height="600" alt="Linear_Regression_Errors" src="https://github.com/user-attachments/assets/5a6edc6f-7be7-4a5c-819e-c01bc6330850" />
+  
+- **Loss Curve:**
+
+  <img width="1920" height="967" alt="Linear_Regression_Losses" src="https://github.com/user-attachments/assets/f3038a98-575a-44e5-b71b-4d6a840fa415" />
+
+---
+
+### Logistic Regression Outputs
+
+- **Performance on Train Data:**
+
+  <img width="1920" height="967" alt="Logistic_Regression_Model" src="https://github.com/user-attachments/assets/fab8d835-97a2-42be-82dd-20cf10ff9bdc" />
+
+- **Loss vs Iterations:**
+
+  <img width="1920" height="967" alt="Logistic_Loss_Curve_Training" src="https://github.com/user-attachments/assets/69868fc6-4a32-4691-8f44-f76c649e1a58" />
+
+- **Performance on test Data:**
+
+  <img width="1920" height="967" alt="Logistic_Regression_Test_Model" src="https://github.com/user-attachments/assets/dba493ad-2c49-4393-8733-6fdb72c36c07" />
+
+---
