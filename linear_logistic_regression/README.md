@@ -205,3 +205,50 @@ This project illustrates the **end-to-end workflow of building learning algorith
     - Unit testing and CI for reproducibility  
 
 ---
+
+### Error Metrics (Formal Definitions)
+
+#### Regression Metrics
+
+- **Mean Squared Error (MSE):**
+  \[
+  \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+  \]
+
+- **Root Mean Squared Error (RMSE):**
+  \[
+  \text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2 }
+  \]
+
+- **Mean Absolute Error (MAE):**
+  \[
+  \text{MAE} = \frac{1}{n} \sum_{i=1}^n \left| y_i - \hat{y}_i \right|
+  \]
+
+- **Coefficient of Determination (R²):**
+  \[
+  R^2 = 1 - \frac{\sum_{i=1}^n (y_i - \hat{y}_i)^2}{\sum_{i=1}^n (y_i - \bar{y})^2}
+  \]
+  where $\bar{y}$ is the mean of true labels.
+
+---
+
+#### Classification Metrics
+
+- **Accuracy:**
+  \[
+  \text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}
+  \]
+
+- **Precision:**
+  \[
+  \text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+  \]
+
+Where:  
+- **TP** = True Positives  
+- **TN** = True Negatives  
+- **FP** = False Positives  
+- **FN** = False Negatives  
+
+---
