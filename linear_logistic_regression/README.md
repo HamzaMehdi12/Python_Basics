@@ -183,10 +183,11 @@ b := b - \eta \cdot P \cdot \frac{1}{n} \sum_{i=1}^{n} (\hat{y} - y)
 
 ## 📊 Summary Comparison
 
-| Model | Loss Function | Final Loss | Accuracy | R² Score | Complexity | Notes |
-|-------|--------------|------------|----------|-----------|------------|-------|
-| **Linear Regression** | MSE | 6.614 (test) | – | 0.91 (test) | $O(n \cdot d \cdot iter)$ | Excellent regression fit |
-| **Logistic Regression** | BCE | 0.062 (test) | 98.5% | – | $O(n \cdot d \cdot iter)$ | Near-perfect classification |
+| Model | Loss Function | Final Loss | Accuracy | R² Score | Notes |
+|-------|--------------|------------|----------|-----------|-------|
+| **Linear Regression** | MSE | 6.614 (test) | – | 0.91 (test) | Excellent regression fit with animated visualizations and multi-metric evaluation (MSE, RMSE, MAE, R²) |
+| **Logistic Regression** | BCE | 0.056 | **99%** | – | **Penalty factor applied to gradient updates**. Accuracy improved from ~70% → 99%. Demonstrates advanced gradient optimization and faster convergence. |
+
 
 ---
 
