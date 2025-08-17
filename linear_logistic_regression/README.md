@@ -176,3 +176,32 @@ Below is a comprehensive breakdown of the implemented classes, methods, and thei
 | **Logistic Regression** | BCE | 0.062 (test) | 98.5% | – | $O(n \cdot d \cdot iter)$ | Near-perfect classification |
 
 ---
+
+## Technical Summary
+
+This project illustrates the **end-to-end workflow of building learning algorithms from first principles**:
+
+- **Mathematical Foundations → Implementation → Evaluation → Visualization**  
+  - Each model directly encodes its cost function, gradients, and parameter updates using `numpy`.  
+  - No reliance on external ML libraries for optimization, ensuring transparency and correctness.  
+
+- **Evaluation Framework**  
+  - Multiple error metrics for regression (MSE, MAE, RMSE, R²) provide a holistic view of fit quality.  
+  - Classification metrics (Accuracy, Precision) quantify logistic regression’s predictive power.  
+
+- **Computational Complexity**  
+  - Both models train in $O(n \cdot d \cdot iter)$ where *n* = samples, *d* = features, *iter* = iterations.  
+  - Clear trade-offs between accuracy, convergence speed, and learning rate are demonstrated.  
+
+- **Visualization & Diagnostics**  
+  - Training dynamics captured via animated regression lines and loss curves.  
+  - Clear diagnostic plots help verify convergence and generalization behavior.  
+
+- **Extensibility**  
+  - Current design allows straightforward extension to:  
+    - Regularization terms (L1/L2 penalty in cost function)  
+    - Multi-class logistic regression (softmax, cross-entropy)  
+    - Mini-batch or stochastic gradient descent variants  
+    - Unit testing and CI for reproducibility  
+
+---
