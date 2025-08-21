@@ -16,9 +16,9 @@ It highlights advanced **data wrangling, encoding, imputing, and scaling techniq
 | The Walking Dead               | (2010–22) | Drama, Horror, Thriller       | 8.2    | Sheriff Rick wakes up from a coma... | Andrew Lincoln, Norman Reedus | 885,805 | 44.0    | NaN |
 
 **Dataset Info**
-$RangeIndex: 9999 entries$
-$Columns: 9 (Movies, Year, Genre, Rating, One-line, Stars, Votes, Runtime, Gross)$
-$Memory: 703.2 KB$
+1. $RangeIndex: 9999 entries$
+2. $Columns: 9 (Movies, Year, Genre, Rating, One-line, Stars, Votes, Runtime, Gross)$
+3. $Memory: 703.2 KB$
 
 
 ---
