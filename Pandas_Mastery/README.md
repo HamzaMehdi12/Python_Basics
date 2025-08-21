@@ -112,6 +112,36 @@ Helps handle skewed revenue distribution.
 
 ---
 
+## 📌 Why This Matters
+
+Preprocessing is the foundation of every machine learning and analytics pipeline.  
+The steps shown here — handling missing data, encoding categorical variables, feature scaling, and deduplication — directly influence model performance. Without them:
+
+- Models can **overfit** or fail to generalize.  
+- Metrics such as accuracy, precision, or R² can be **misleading**.  
+- Data bias can creep into predictions, leading to unreliable insights.  
+
+By systematically applying transformations with **Pandas**, this project demonstrates that clean, well-prepared data improves both **interpretability** and **downstream predictive accuracy**.
+
+---
+
+### ✨ Key Preprocessing Equation
+
+To normalize numerical features and reduce skewness, the **Min-Max Scaling** equation was applied:
+
+$$
+X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}}
+$$
+
+Where:  
+- \(X\) = original feature value  
+- \(X_{min}, X_{max}\) = minimum and maximum values of the feature  
+- \(X_{scaled}\) = scaled value in the range [0,1]  
+
+This ensures that all features contribute equally to models, improving **convergence** and **stability** of machine learning algorithms.
+
+---
+
 ## 📝 Project Summary
 
 This project demonstrates my ability to take a **real-world messy dataset** and transform it into a **machine-learning ready asset**.  
