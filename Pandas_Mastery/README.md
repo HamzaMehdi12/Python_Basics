@@ -136,3 +136,27 @@ Here you can view the original and processed dataset images
 ### Processed
 
 <img width="522" height="779" alt="Processed" src="https://github.com/user-attachments/assets/68511107-3b00-4be2-88f4-7004110eee64" />
+
+---
+
+## 🚀 Future Work
+
+To take this project further, I plan to:  
+
+- **Modeling**:  
+  - Train **linear regression** models to predict `Gross Revenue` based on features (Votes, Runtime, Genre).  
+  - Train **logistic regression / classification models** to predict whether a movie’s rating is “above average” (>7.0).  
+
+- **Feature Expansion**:  
+  - Use **NLP techniques** (TF-IDF, embeddings) on the `One-line` description to generate semantic features.  
+  - Engineer new popularity-based features like **decay-adjusted votes** (recent years weighted more).  
+
+- **Visualization**:  
+  - Explore trends in movie genres, runtime, and revenue using time-series plots.  
+  - Build interactive dashboards (e.g., Streamlit) for exploratory analysis.  
+
+- **Deployment**:  
+  - Package preprocessing as a **reusable Python module**.  
+  - Integrate into an **end-to-end ML pipeline** with FastAPI for deployment.  
+
+---
