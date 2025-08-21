@@ -112,7 +112,7 @@ Helps handle skewed revenue distribution.
 
 ---
 
-## 📝 Project Summary (For Recruiters)
+## 📝 Project Summary
 
 This project demonstrates my ability to take a **real-world messy dataset** and transform it into a **machine-learning ready asset**.  
 
@@ -126,3 +126,13 @@ This project reflects **data engineering, cleaning, and applied ML readiness ski
 It shows not only my ability to clean data but also to think ahead toward how features will impact downstream **ML model performance**.
 
 ---
+
+## Images
+Here you can view the original and processed dataset images
+### Original
+
+<img width="578" height="779" alt="Original" src="https://github.com/user-attachments/assets/74d70401-b0c8-44b9-a05c-17c28f9904fd" />
+
+### Processed
+
+<img width="522" height="779" alt="Processed" src="https://github.com/user-attachments/assets/68511107-3b00-4be2-88f4-7004110eee64" />
