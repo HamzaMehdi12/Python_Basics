@@ -16,9 +16,10 @@ It highlights advanced **data wrangling, encoding, imputing, and scaling techniq
 | The Walking Dead               | (2010–22) | Drama, Horror, Thriller       | 8.2    | Sheriff Rick wakes up from a coma... | Andrew Lincoln, Norman Reedus | 885,805 | 44.0    | NaN |
 
 **Dataset Info**
--> RangeIndex: 9999 entries
--> Columns: 9 (Movies, Year, Genre, Rating, One-line, Stars, Votes, Runtime, Gross)
--> Memory: 703.2 KB
+$RangeIndex: 9999 entries$
+$Columns: 9 (Movies, Year, Genre, Rating, One-line, Stars, Votes, Runtime, Gross)$
+$Memory: 703.2 KB$
+
 
 ---
 
@@ -35,20 +36,53 @@ It highlights advanced **data wrangling, encoding, imputing, and scaling techniq
 
 ---
 
-## 🧮 Feature Engineering Equations
+## 🧮 Feature Engineering & Equations
 
-1. **Year Parsing**
+### 1. Year Parsing
+\[
+start\_year = \min(YEAR), \quad end\_year = \max(YEAR)
+\]
 
--> start_year = min(YEAR)
--> end_year = max(YEAR)
+Example: `(2010–2022)` → `start_year=2010`, `end_year=2022`.
 
-Example: `(2010–2022)` → `start_year=2010`, `end_year=2022`
+---
 
-2. **Votes Normalization**
--> $VOTES_scaled = (VOTES - μ) / σ$
+### 2. Votes Normalization (Z-score Scaling)
+\[
+VOTES_{scaled} = \frac{VOTES - \mu}{\sigma}
+\]
 
-3. **Runtime Imputation**
--> $Runtime_filled = median(Runtime)$
+Where:  
+- \( \mu \) = mean of votes  
+- \( \sigma \) = standard deviation of votes  
+
+---
+
+### 3. Weighted Rating (IMDb Formula)
+To avoid bias toward low-vote movies:
+
+\[
+WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C
+\]
+
+Where:  
+- \( R \) = average rating for the movie  
+- \( v \) = number of votes for the movie  
+- \( m \) = minimum votes required to be considered  
+- \( C \) = mean rating across the dataset  
+
+This allows better **popularity-adjusted rating prediction**.
+
+---
+
+### 4. Gross Revenue Normalization
+Since only ~5% of entries have revenue data:
+
+\[
+Gross_{log} = \log(Gross + 1)
+\]
+
+Helps handle skewed revenue distribution.
 
 ---
 
@@ -69,7 +103,8 @@ Example: `(2010–2022)` → `start_year=2010`, `end_year=2022`
 - **Raw → Cleaned dataset** reduced noise, dropped duplicates, and imputed 20%+ missing values.  
 - **Label encoding & scaling** made the dataset **ML-ready**.  
 - **Feature extraction** from textual columns (YEAR, GENRE, STARS) gave structured numeric data.  
-- This cleaned dataset can now power **ML pipelines for regression/classification tasks** (e.g., predicting ratings, votes, or gross revenue).
+- **Weighted rating equation** shows potential for predicting more reliable popularity scores.  
+- Final dataset is compact, clean, and suitable for **ML regression/classification tasks**.
 
 ---
 
@@ -87,11 +122,17 @@ Example: `(2010–2022)` → `start_year=2010`, `end_year=2022`
 
 ---
 
-## 🚀 Key Takeaways
+## 📝 Project Summary (For Recruiters)
 
-- Strong **data wrangling & feature engineering** workflow.  
-- Dealt with **real-world messy text columns** (YEAR ranges, comma-separated genres, stars).  
-- Produced a **scalable preprocessing pipeline** ready for ML training.  
-- Showcases ability to go from **raw unstructured Kaggle data → clean, usable dataset**.
+This project demonstrates my ability to take a **real-world messy dataset** and transform it into a **machine-learning ready asset**.  
+
+Key highlights:  
+- Designed a **robust preprocessing pipeline** covering null handling, duplicate removal, label encoding, and scaling.  
+- Applied **feature engineering** to extract useful attributes like `start_year`, `end_year`, and normalized votes.  
+- Incorporated **mathematical rigor** by implementing rating-weighting and log normalization for skewed features.  
+- Produced a final dataset that is **ready for predictive modeling** — e.g., predicting ratings, votes, or gross revenue.  
+
+This project reflects **data engineering, cleaning, and applied ML readiness skills**, which are essential for both research and production environments.  
+It shows not only my ability to clean data but also to think ahead toward how features will impact downstream **ML model performance**.
 
 ---
