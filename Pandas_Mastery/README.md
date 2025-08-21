@@ -39,18 +39,14 @@ $Memory: 703.2 KB$
 ## 🧮 Feature Engineering & Equations
 
 ### 1. Year Parsing
-\[
-start\_year = \min(YEAR), \quad end\_year = \max(YEAR)
-\]
+$start\_year = \min(YEAR), \quad end\_year = \max(YEAR)$
 
 Example: `(2010–2022)` → `start_year=2010`, `end_year=2022`.
 
 ---
 
 ### 2. Votes Normalization (Z-score Scaling)
-\[
-VOTES_{scaled} = \frac{VOTES - \mu}{\sigma}
-\]
+$VOTES_{scaled} = \frac{VOTES - \mu}{\sigma}$
 
 Where:  
 - \( \mu \) = mean of votes  
@@ -60,10 +56,7 @@ Where:
 
 ### 3. Weighted Rating (IMDb Formula)
 To avoid bias toward low-vote movies:
-
-\[
-WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C
-\]
+$WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C$
 
 Where:  
 - \( R \) = average rating for the movie  
@@ -77,10 +70,7 @@ This allows better **popularity-adjusted rating prediction**.
 
 ### 4. Gross Revenue Normalization
 Since only ~5% of entries have revenue data:
-
-\[
-Gross_{log} = \log(Gross + 1)
-\]
+$Gross_{log} = \log(Gross + 1)$
 
 Helps handle skewed revenue distribution.
 
