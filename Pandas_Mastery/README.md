@@ -392,15 +392,15 @@ This single change will unlock meaningful volatility and Sharpe ratio calculatio
 
 ## Dashboard Images
 
-## Summary
-<img width="641" height="578" alt="Stock_4" src="https://github.com/user-attachments/assets/252739e5-aecc-4adc-9d89-23eb100f1e4a" />
-
-<img width="655" height="771" alt="Stock_3" src="https://github.com/user-attachments/assets/2197f862-36ce-4a98-9a63-30310c4110fc" />
+<img width="682" height="849" alt="Stock_1" src="https://github.com/user-attachments/assets/36debd3a-c4ae-48bd-bc6d-4051e14a664f" />
 
 <img width="666" height="776" alt="Stock_2" src="https://github.com/user-attachments/assets/3b301d09-1958-4187-9b9c-bd12e2f7d094" />
 
-<img width="682" height="849" alt="Stock_1" src="https://github.com/user-attachments/assets/36debd3a-c4ae-48bd-bc6d-4051e14a664f" />
+<img width="655" height="771" alt="Stock_3" src="https://github.com/user-attachments/assets/2197f862-36ce-4a98-9a63-30310c4110fc" />
 
+<img width="641" height="578" alt="Stock_4" src="https://github.com/user-attachments/assets/252739e5-aecc-4adc-9d89-23eb100f1e4a" />
+
+## Summary
 ### Scope
 NVDA 5-minute data over 1 month → engineered indicators, EDA, dashboard, and CSV exports.
 
