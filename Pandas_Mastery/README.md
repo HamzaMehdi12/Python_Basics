@@ -317,15 +317,6 @@ pip install -r requirements.txt
 -- **Run the analyzer (downloads data, computes features, saves CSVs):** python financial_data_analyzer.py
 -- **Launch dashboard"** streamlit run financial_data_analyzer.py
 
-## Project Structure
-.
-├── financial_data_analyzer.py     # Main script (class: Stockdata)
-├── OPEN_raw_data.csv              # Raw dump (saved during run)
-├── prices.csv                     # OHLCV + Returns
-├── indicators.csv                 # SMA/RSI/ROC/BB/Std features
-├── summary.csv                    # Mean Return, Volatility, Max/Min Close
-└── requirements.txt               # Dependencies
-
 ### Requirements
 pandas==2.2.2
 matplotlib==3.9.0
