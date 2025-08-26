@@ -256,30 +256,28 @@ To take this project further, I plan to:
 
 ## Technical Indicators & Equations
 **Simple Moving Average (SMA)**  
-\[
-\boxed{SMA_n(t) = \frac{1}{n}\sum_{i=0}^{n-1} P_{t-i}}
-\]
+$$boxed{SMA_n(t) = \frac{1}{n}\sum_{i=0}^{n-1} P_{t-i}}$$
 
 **Relative Strength Index (RSI)** (Wilder)  
-\[
+$$
 \boxed{RSI = 100 - \frac{100}{1 + \frac{AvgGain}{AvgLoss}}}
-\]
+$$
 
 **Rate of Change (ROC)**  
-\[
+$$
 \boxed{ROC_n(t) = \frac{P_t - P_{t-n}}{P_{t-n}} \times 100}
-\]
+$$
 
 **Bollinger Bands (BB)**  
-\[
+$$
 \boxed{Upper = SMA_n + k\sigma_n \quad;\quad Lower = SMA_n - k\sigma_n}
-\]
+$$
 with \(k = 2\) (default) and \(\sigma_n\) = rolling standard deviation.
 
 **Volatility (Rolling Std)**  
-\[
+$$
 \boxed{\sigma_n(t) = \sqrt{\frac{1}{n}\sum_{i=0}^{n-1}\left(P_{t-i} - SMA_n(t)\right)^2}}
-\]
+$$
 
 ---
 
@@ -320,3 +318,50 @@ pip install -r requirements.txt
 -- **Launch dashboard"** streamlit run financial_data_analyzer.py
 
 ## Project Structure
+.
+├── financial_data_analyzer.py     # Main script (class: Stockdata)
+├── OPEN_raw_data.csv              # Raw dump (saved during run)
+├── prices.csv                     # OHLCV + Returns
+├── indicators.csv                 # SMA/RSI/ROC/BB/Std features
+├── summary.csv                    # Mean Return, Volatility, Max/Min Close
+└── requirements.txt               # Dependencies
+
+### Requirements
+pandas==2.2.2
+matplotlib==3.9.0
+seaborn==0.13.2
+yfinance==0.2.40
+streamlit==1.37.0
+scipy==1.13.1
+
+## Data Ouputs
+-- **prices.csv:** Columns: Open, High, Low, Close, Volume, Returns
+-- **indicators.csv:** Columns: Close, SMA_7, SMA_14, RSI_7, RSI_14, ROC_7, ROC_14, BB_Low_7, BB_Up_7, BB_Low_14, BB_Up_14, Std_7, Std_14
+-- **summary.csv:-** Columns: Metrics, Value Rows: Mean Return, Volatility, Max_Close, Min_Close
+
+## License
+MIT — free to use and adapt.
+
+## Contact
+Name: Muhammad Hamza Mehdi
+
+## Summary
+### Scope 
+NVDA 5-minute data over 1 month → engineered indicators, EDA, dashboard, and CSV exports.
+### Equations implemented
+SMA, RSI, ROC, Bollinger Bands, Rolling Std (σ) — see boxed formulas above.
+### Key values (current run)
+Mean Return: 0.0054% (constant column in code)
+### Volatility 
+(σ):0.0000
+### Sharpe 
+0.00 (guard against σ=0)
+### Max Close: ~181.50
+### Min Close: ~174.42
+### Anomalies flagged (RSI rule): 407
+
+### Highlights
+Automated ingest → clean features → rich visuals → one-click dashboard → reproducible CSVs.
+### Next step (1-line fix)
+Switch to per-bar returns to unlock meaningful σ & Sharpe.
+Ready for production demos & portfolio: compact, readable, and results-oriented.
